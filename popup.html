@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        body{
+          width: 300px;
+        }
+        button {
+          height: 30px;
+          width: 100%;
+          outline: none;
+          margin-top:10px;
+        }
+        .footer_proximity{
+          text-align: center;
+          font-size: 7px;
+        }
+        .input_key{
+          text-align: center;
+          width: 100%;
+        }
+      </style>
+    </head>
+    <body>
+      <h1 align="center">Kraken</h1>   
+      <div align="center" class="input-key">
+        <input class="input_key" type="text" placeholder="List" name='searchKey' id="searchKey" style="margin-bottom: 10px;">
+        <input type="file" accept="txt/*" name="siteMapFile" id="siteMapFile">
+      </div>
+      <div id="result"></div>
+      <div id="code-to-scan" style="visibility:hidden;display:none"></div>
+      <a href="options.html"><p class='footer_proximity'>Proximity BBDO Mauritius</p></a>
+      <script src='popup.js'></script>
+    </body>
+  </html>
