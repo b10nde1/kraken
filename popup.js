@@ -17,19 +17,21 @@ const scanDocument=(argIn)=> {
     let arg=argIn.split('/*/');
     let result='';
     let total=0;
-    let finalList=new Array(arg.length);
-    for(var compt=0;compt<listLoc.length;compt++){
-        let temp=listLoc[compt].innerText;
-        for(var comptArg=0;comptArg<arg.length;comptArg++){
-            let check=temp.search(arg[comptArg]);
-            if(check<0){
-                finalList[total]=arg[comptArg];
-                total+=1;
-                result+='<p>'+temp+'</p>';
+    for(var comptArg=0;comptArg<arg.length;comptArg++){
+        let tempCheck=0;
+        let tempArg=arg[comptArg];
+        for(var comptlistLoc=0;comptlistLoc<listLoc.length;comptlistLoc++){
+            let tempListLoc=listLoc[comptlistLoc].innerText;
+            if(tempArg===tempListLoc){
+                tempCheck=1;
             }
         }
+        if(tempCheck==0){
+            console.log(tempArg);
+            result+='<p>'+tempArg+'</p>';
+        }
     }
-    document.getElementById('mode-sitemap-result-urls').innerHTML=result;
+    document.getElementById('result').innerHTML=result;
     copyElement(document.getElementById('result'));
 }
 
