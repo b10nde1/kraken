@@ -29,8 +29,11 @@ const scanDocument=(argIn)=> {
         if(tempCheck==0){
             console.log(tempArg);
             result+='<p>'+tempArg+'</p>';
+            total++;
         }
     }
+    document.getElementById('total-mapping').innerHTML=arg.length;
+    document.getElementById('total-result').innerHTML=total;
     document.getElementById('result').innerHTML=result;
     copyElement(document.getElementById('result'));
 }
